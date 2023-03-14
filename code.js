@@ -4,16 +4,23 @@ function populateGrid(size) {
     grid.style.gridTemplateRows = `repeat(${size} , 1fr)`;
     //1fr repeats 1 fraction of available space (600px)//
     //whatever size variable is input a fraction is repeated//
+    //whatever size grid is created//
 
     for (let i = 0; i < 256; i++) {
         let square = document.createElement("div");
-        square.style.backgroundColor = "grey";
-        grid.insertAdjacentElement("beforeend", square);
-    //populating a 16x16 (256) grid//
-    //insertAdjacentElement places each fraction immediately after the
-    //previous div in the grid div as set colour, this will be white//
-    //but for testing may be grey//
+        square.addEventListener("mouseover", () => {
+            square.style.backgroundColor = "black";
+        });
+    //16x16 (256) div's are created//
+    //when mouse hovers over a white div, it's background colour changes//
+    //to black//
+
+    square.style.backgroundColor = "white";
+    grid.insertAdjacentElement("beforeend", square);
+    //'square' div's placed right after the previous div with 'beforeend'//
+    //onto grid div//
     }
 }
 
 populateGrid(16);
+
