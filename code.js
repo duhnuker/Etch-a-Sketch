@@ -15,7 +15,7 @@ function populateGrid(size) {
     //when mouse hovers over a white div, it's background colour changes//
     //to black//
 
-    square.style.backgroundColor = "white";
+    square.style.backgroundColor = "grey";
     grid.insertAdjacentElement("beforeend", square);
     //'square' div's placed right after the previous div with 'beforeend'//
     //onto grid div//
@@ -24,3 +24,9 @@ function populateGrid(size) {
 
 populateGrid(16);
 
+const changeGridSize = document.querySelector("button");
+
+changeGridSize.addEventListener('click', () => {
+    const userInput = Number(window.prompt("How many squares per side would you like?"))
+    populateGrid(userInput);
+})
