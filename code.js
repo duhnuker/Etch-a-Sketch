@@ -20,7 +20,7 @@ function populateGrid(size) {
     //when mouse hovers over a white div, it's background colour changes//
     //to black//
 
-    square.style.backgroundColor = "grey";
+    square.style.backgroundColor = "white";
     grid.insertAdjacentElement("beforeend", square);
     //'square' div's placed right after the previous div with 'beforeend'//
     //onto grid div//
