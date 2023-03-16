@@ -1,12 +1,17 @@
 function populateGrid(size) {
     let grid = document.querySelector(".grid");
+    let squares = grid.querySelectorAll("div");
+    squares.forEach((div) => div.remove());
+    //each time the grid is being populated it is completely removed first//
     grid.style.gridTemplateColumns = `repeat(${size} , 1fr)`;
     grid.style.gridTemplateRows = `repeat(${size} , 1fr)`;
     //1fr repeats 1 fraction of available space (600px)//
     //whatever size variable is input a fraction is repeated//
     //whatever size grid is created//
 
-    for (let i = 0; i < 256; i++) {
+    let amount = size * size;
+
+    for (let i = 0; i < amount; i++) {
         let square = document.createElement("div");
         square.addEventListener("mouseover", () => {
             square.style.backgroundColor = "black";
