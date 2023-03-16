@@ -24,9 +24,14 @@ function populateGrid(size) {
 
 populateGrid(16);
 
+
 const changeGridSize = document.querySelector("button");
 
 changeGridSize.addEventListener('click', () => {
-    const userInput = Number(window.prompt("How many squares per side would you like?"))
+    let userInput = Number(window.prompt("How many squares per side would you like?"))
+    while (userInput > 100) {
+        alert("Please enter a value less than or equal to 100!");
+        userInput = Number(window.prompt("How many squares per side would you like?"))
+    }
     populateGrid(userInput);
 })
